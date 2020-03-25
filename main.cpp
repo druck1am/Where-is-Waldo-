@@ -31,7 +31,8 @@ int main(int argc, const char * argv[]) {
     Mat result;
     original.copyTo(result);
     
-    //template matching function is used here. I used the TM_CCOEFF_NORMED method, because it is more accurate.         I used minMaxLoc to find the values for the minimum and maximum points where the template and original image match
+    //template matching function is used here. I used the TM_CCOEFF_NORMED method, because it is more accurate.         
+    //I used minMaxLoc to find the values for the minimum and maximum points where the template and original image match.
     double minVal;
     double maxVal;
     Point minLoc;
@@ -41,7 +42,8 @@ int main(int argc, const char * argv[]) {
     normalize( result, result, 0, 1, NORM_MINMAX);
     minMaxLoc( result, &minVal, &maxVal, &minLoc, &maxLoc);
     
-    //this makes another copy of the original image to be used for the display. A rectagle will then be traced around the template, and displayed on the screen.
+    //this makes another copy of the original image to be used for the display. 
+    //A rectagle will then be traced around the template, and displayed on the screen.
     Mat display;
     original.copyTo(display);
     
